@@ -1,0 +1,63 @@
+{
+  "example": {
+    "id": "example",
+    "env": ["EXAMPLE_API_KEY"],
+    "npm": "@ai-sdk/openai-compatible",
+    "api": "https://api.example.com/v1",
+    "name": "Example Provider",
+    "doc": "https://example.com/docs",
+    "future_provider": {"revision": 2},
+    "models": {
+      "reasoner": {
+        "id": "reasoner",
+        "canonical_model_id": "example-lab/reasoner",
+        "type": "chat",
+        "name": "Example Reasoner",
+        "description": "A synthetic fixture, not a real model or price quote.",
+        "family": "example-family",
+        "attachment": true,
+        "reasoning": true,
+        "reasoning_options": [{"type": "effort", "values": [null, "low", "high"], "future_option": true}],
+        "tool_call": true,
+        "interleaved": {"field": "reasoning_content", "future_interleaved": true},
+        "structured_output": true,
+        "temperature": false,
+        "knowledge": "2025-01",
+        "release_date": "2026-02-28",
+        "last_updated": "2026-10",
+        "modalities": {"input": ["text", "image"], "output": ["text"], "future_modality": true},
+        "open_weights": false,
+        "limit": {"context": 200000, "input": 180000, "output": 20000, "future_limit": 7},
+        "status": "beta",
+        "cost": {
+          "input": 0.12345678901234567890123456789,
+          "output": 1.25,
+          "reasoning": 2.5,
+          "cache_read": 0,
+          "cache_write": 0.000001,
+          "input_audio": 3,
+          "output_audio": 4,
+          "context_over_200k": {"input": 0.25, "output": 2.5},
+          "tiers": [{"input": 0.25, "output": 2.5, "tier": {"type": "context", "size": 200001, "future_tier": true}, "future_price": {"unit": "tokens"}}],
+          "future_cost": {"currency": "USD"}
+        },
+        "provider": {"shape": "responses", "headers": {"anthropic-beta": "synthetic-2026-01-01"}, "body": {"feature": true}, "future_config": true},
+        "experimental": {"modes": {"fast": {"provider": {"body": {"speed": "fast"}}}}},
+        "future_model": {"nested": [1, true, {"label": "preserved"}]}
+      },
+      "subscription": {
+        "id": "subscription",
+        "name": "Example Subscription",
+        "description": "No published price.",
+        "attachment": false,
+        "reasoning": false,
+        "tool_call": false,
+        "release_date": "2026-01",
+        "last_updated": "2026-01-01",
+        "modalities": {"input": ["text"], "output": ["text"]},
+        "open_weights": true,
+        "limit": {"context": 0, "output": 0}
+      }
+    }
+  }
+}
